@@ -5,8 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 define('MAIN_FILE_LOADED', true);
-define('TEMP_FILE_PATH', $_SERVER["DOCUMENT_ROOT"] . '/../../private/gobag/masterdata_releases/');
-define('TEMP_FILE_PATH_LNG', $_SERVER["DOCUMENT_ROOT"] . '/../../private/gobag/translation_releases/');
 
 require_once 'lib/exception/exceptions.php';
 
@@ -33,7 +31,11 @@ spl_autoload_register(function ($class_name) {
     
     if ($classType == 'Request')
     {
-        include './lib/request/'.strtolower(str_replace('Request', '_request', $class_name)) . '.php';
+        $snake_case = strtolower(
+            preg_replace('/([a-z])([A-Z])/', '$1_$2', str_replace('Request', '_request', $class_name))
+        );
+    
+        include __DIR__ . '/request/' . $snake_case . '.php';
     }
 });
 
