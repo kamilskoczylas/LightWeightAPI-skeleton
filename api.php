@@ -62,7 +62,6 @@
 define('APP_DIR', __DIR__ . '/app');
 define('LIB_DIR', __DIR__ . '/lib');
 
-
 include LIB_DIR . '/api_header.php';
 
 
