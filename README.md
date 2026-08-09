@@ -26,6 +26,29 @@ Service-based framework designed for rapid development of PHP APIs with clean ar
 - PHP 8 or higher
 - PDO extension enabled
 
+## Installation
+
+The project uses `LightWeightAPI-framework` as a Git submodule located in the `lib` directory.
+
+After creating or cloning the project, the `lib` directory may not contain the framework source yet. To initialize and fetch the submodule, run:
+
+```bash
+git submodule update --init --recursive
+```
+
+If you are cloning the project **for the first time**, you can fetch the submodule automatically with:
+
+```bash
+git clone --recurse-submodules <PROJECT_URL>
+```
+
+If the project has already been cloned without `--recurse-submodules`, use:
+
+```bash
+git submodule update --init --recursive
+```
+
+
 ## Architecture
 
 The framework follows a 4-layer architecture pattern:
