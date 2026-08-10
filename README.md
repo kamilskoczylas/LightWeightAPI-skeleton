@@ -39,7 +39,7 @@ git submodule update --init --recursive
 If you are cloning the project **for the first time**, you can fetch the submodule automatically with:
 
 ```bash
-git clone --recurse-submodules <PROJECT_URL>
+git clone --recurse-submodules https://github.com/kamilskoczylas/LightWeightAPI-skeleton
 ```
 
 If the project has already been cloned without `--recurse-submodules`, use:
